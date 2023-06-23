@@ -86,9 +86,21 @@ body {
     width: 700px;
 }
 
-.App ul li h3 {
+.App ul li div {
+    display: flex;
+    justify-content: end;
+
+}
+
+.App ul li div h3 {
     padding-left: 20px;
     color: white;
+}
+
+.App ul li div h5{
+    margin-left: -10px;
+    color: white;
+    font-weight: normal;
 }
 
 .App ul li {

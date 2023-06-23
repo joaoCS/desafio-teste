@@ -63,7 +63,14 @@ function App() {
         setSearch(event.target.value)
     }
 
-    function selGenre(gen) {}
+    function selGenre(gen) {
+        const filteredGames = games.filter((game) =>
+            game.genre.toLowerCase().includes(gen.toLowerCase())
+        )
+
+        if (gen === "Todos os gêneros") setAuxGames(games)
+        else setAuxGames(filteredGames)
+    }
 
     function execSearch() {
         const filteredGames = games.filter((game) =>
@@ -112,7 +119,10 @@ function App() {
                         return (
                             <li key={game.id}>
                                 <img src={game.thumbnail} />
-                                <h3>{game.title}</h3>
+                                <div>
+                                    <h3>{game.title}</h3>
+                                    <h5>Gênero: {game.genre}</h5>
+                                </div>
                             </li>
                         )
                     })}

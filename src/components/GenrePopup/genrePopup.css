@@ -16,5 +16,11 @@
     border: none;
     color: rgb(148, 139, 206);
     padding: 2px;
+    cursor: pointer;
+    border-radius: 0;
 }
 
+#genresPopup li:hover{
+    background-color: rgb(148, 139, 206);;
+    color: white;
+}

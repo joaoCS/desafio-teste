@@ -6,7 +6,9 @@ export function getDeduplicatedGenres(games) {
     }
     
     const set = new Set(genres)
-    const deduplicatedGenres = Array.from(set)
+    let deduplicatedGenres = Array.from(set)
     
+    deduplicatedGenres.unshift("Todos os gêneros");
+
     return deduplicatedGenres
 }
