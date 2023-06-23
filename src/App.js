@@ -2,11 +2,13 @@ import { useEffect, useState } from "react"
 import "./App.css"
 import { api } from "./utils/api"
 import ErrorModal from "./components/ErrorModal"
+import { BsSearch } from "react-icons/bs"
 
 function App() {
     const [games, setGames] = useState([])
     const [openModal, setOpenModal] = useState(false)
     const [errorModalMessage, setErrorModalMessage] = useState("")
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         async function fetchGames() {
@@ -44,9 +46,30 @@ function App() {
         fetchGames()
     }, [])
 
+    function handleChange(event) {
+      setSearch(event.target.value);
+    }
+
+    function submitSearch() {
+
+    }
+
     return (
         <>
             <div className="App">
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Busque aqui um jogo pelo título"
+                        onChange={handleChange}
+                        size="35"
+                    />
+                    <button onClick={submitSearch}>
+                        <BsSearch size={25} />
+                    </button>
+                </div>
+                <br/>
+                <br/>
                 <ul>
                     {games.map((game) => {
                         return (
@@ -58,7 +81,7 @@ function App() {
                     })}
                 </ul>
             </div>
-            {openModal && <ErrorModal message={errorModalMessage}/>}
+            {openModal && <ErrorModal message={errorModalMessage} />}
         </>
     )
 }

@@ -1,21 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500&display=swap");
 
 * {
-  /* font-family: 'Saira Stencil One', cursive; */
-  font-family: 'Saira Condensed', sans-serif;
+    /* font-family: 'Saira Stencil One', cursive; */
+    font-family: "Saira Condensed", sans-serif;
 }
 
 .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  font-size: 16px;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  font-size: 16px;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+  font-size: 16px;
+}
+
+.App div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  border: 1px solid rgb(148, 139, 206);
+  border-radius: 5px;
+
+}
+
+.App div input {
+    background-color: rgb(109, 63, 153);
+    height: 35px;
+    font-size: 16px;
+    color: white;   
+    border: none;
+}
+
+.App div button {
+  background-color: rgb(109, 63, 153);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.App div button:hover {
+  background-color: rgb(166, 122, 207);
+
 }
 
 body {
-  background-color: darkslateblue;
+    background-color: darkslateblue;
 }
 
 .App ul {
@@ -28,53 +72,51 @@ body {
 }
 
 .App ul {
-
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  gap: 1rem;
-  list-style: none;
-
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    list-style: none;
 }
 
 .App ul li img {
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 700px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 700px;
 }
 
 .App ul li h3 {
-  padding-left: 20px;
-  color: white;
+    padding-left: 20px;
+    color: white;
 }
 
-
 .App ul li {
-  background-color: rgb(109, 63, 153);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  padding-top: 20px;
-  padding-right: 5px;
-  border: 3px solid rgb(148, 139, 206);
-  max-width: 730px;
+    background-color: rgb(109, 63, 153);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-top: 20px;
+    padding-right: 5px;
+    border: 3px solid rgb(148, 139, 206);
+    max-width: 730px;
 }
 
 @media (min-width: 1030px) {
-  .App ul {
-     grid-template-columns: repeat(2, 1fr); 
-
-  }
-  .App ul li img {
-    width: 400px;
-  }
+    .App ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .App ul li img {
+        width: 400px;
+    }
 }
 
 @media (min-width: 1200px) {
-  .App ul { grid-template-columns: repeat(3, 1fr); }
-  .App ul li img {
-    width: 350px;
-  }
+    .App ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .App ul li img {
+        width: 350px;
+    }
 }
