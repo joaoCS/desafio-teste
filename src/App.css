@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500&display=swap');
+
+* {
+  /* font-family: 'Saira Stencil One', cursive; */
+  font-family: 'Saira Condensed', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App ul {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    max-width: 100%;
+
+    margin-top: 32px; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App ul {
+
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+
+}
+
+.App ul li img {
+  width: 150px;
+}
+
+.App ul li {
+  
+}
+
+@media (min-width: 600px) {
+  .App ul {
+     grid-template-columns: repeat(2, 1fr); 
+
+  }
+  .App ul li img {
+    width: 200px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 900px) {
+  .App ul { grid-template-columns: repeat(3, 1fr); }
+  .App ul li img {
+    width: 350px;
   }
 }
