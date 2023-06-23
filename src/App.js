@@ -29,7 +29,6 @@ function App() {
                 setAuxGames(response.data)
 
                 const genres = getDeduplicatedGenres(response.data)
-                console.log(genres)
                 setGenres(genres)
             } catch (err) {
                 const status = err.response.status
@@ -46,11 +45,16 @@ function App() {
                         "O servidor falhou em responder, tente recarregar a página"
                     )
                     setOpenModal(true)
+                    setAuxGames([]);
+                    setGames([]);
+
                 } else if (status !== 200 || status !== 201) {
                     setErrorModalMessage(
                         "O servidor não conseguirá responder por agora, tente voltar novamente mais tarde"
                     )
                     setOpenModal(true)
+                    setAuxGames([]);
+                    setGames([])
                 }
                 console.log(err)
             }

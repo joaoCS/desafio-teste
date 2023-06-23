@@ -4,8 +4,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-
-    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    background-color: black;
 }
 
 #messageBody p {
@@ -18,6 +18,6 @@
     width: fit-content;
     height: fit-content;
 
-    color: white;
+    color: rgba(255, 0, 119, 0.712);
     font-size: 36px;
 }
