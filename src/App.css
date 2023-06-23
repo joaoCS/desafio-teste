@@ -7,6 +7,13 @@
   font-family: 'Saira Condensed', sans-serif;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   background-color: darkslateblue;
 }
