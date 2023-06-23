@@ -1,0 +1,20 @@
+#genresPopup {
+    position: absolute;
+    background-color: white;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 32px;
+    max-width: 100%;
+    padding: 5px;  
+
+    border-radius: 5px;
+}
+
+#genresPopup li {
+    background-color: white;
+    border: none;
+    color: rgb(148, 139, 206);
+    padding: 2px;
+}
+

@@ -7,6 +7,10 @@
     font-family: "Saira Condensed", sans-serif;
 }
 
+body {
+    background-color: darkslateblue;
+}
+
 .App {
     display: flex;
     flex-direction: column;
@@ -31,6 +35,12 @@
 }
 
 .App div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.App div span {
   display: flex;
   justify-content: center;
   border: 1px solid rgb(148, 139, 206);
@@ -38,7 +48,7 @@
 
 }
 
-.App div input {
+.App div span input {
     background-color: rgb(109, 63, 153);
     height: 35px;
     font-size: 16px;
@@ -46,29 +56,20 @@
     border: none;
 }
 
-.App div button {
+.App div span button {
   background-color: rgb(109, 63, 153);
   border: none;
   color: white;
   cursor: pointer;
 }
 
-.App div button:hover {
+.App div span button:hover {
   background-color: rgb(166, 122, 207);
 
 }
 
-body {
-    background-color: darkslateblue;
-}
-
-.App ul {
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 32px;
-    max-width: 100%;
-
-    margin-top: 32px; */
+#genreFilter {
+    font-size: 20px;
 }
 
 .App ul {
