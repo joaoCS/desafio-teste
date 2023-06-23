@@ -6,6 +6,8 @@ import { BsSearch } from "react-icons/bs"
 
 function App() {
     const [games, setGames] = useState([])
+    const [auxGames, setAuxGames] = useState([])
+
     const [openModal, setOpenModal] = useState(false)
     const [errorModalMessage, setErrorModalMessage] = useState("")
     const [search, setSearch] = useState("")
@@ -21,6 +23,7 @@ function App() {
 
                 console.log(response)
                 setGames(response.data)
+                setAuxGames(response.data)
             } catch (err) {
                 const status = err.response.status;
                 if (status === 500 || 
@@ -50,8 +53,15 @@ function App() {
       setSearch(event.target.value);
     }
 
-    function submitSearch() {
-
+    function execSearch() {
+      const filteredGames = games.filter((game) =>
+          game.title.toLowerCase().includes(search.toLowerCase()))
+      
+      if(search.length === 0)
+        setAuxGames(games);
+      else
+        setAuxGames(filteredGames);
+      
     }
 
     return (
@@ -64,14 +74,14 @@ function App() {
                         onChange={handleChange}
                         size="35"
                     />
-                    <button onClick={submitSearch}>
+                    <button onClick={execSearch}>
                         <BsSearch size={25} />
                     </button>
                 </div>
                 <br/>
                 <br/>
                 <ul>
-                    {games.map((game) => {
+                    {auxGames.map((game) => {
                         return (
                             <li key={game.id}>
                                 <img src={game.thumbnail} />
