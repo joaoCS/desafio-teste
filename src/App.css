@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap"); */
 
 @import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500&display=swap");
 
@@ -18,20 +18,25 @@ body {
     align-items: center;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
   color: white;
-  font-size: 16px;
-  opacity: 1; /* Firefox */
+  font-size: 36px;
+  opacity: 1; 
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { 
   color: white;
-  font-size: 16px;
+  font-size: 36px;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder { 
   color: white;
-  font-size: 16px;
+  font-size: 36px;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
 }
 
 .App div {
@@ -42,6 +47,7 @@ body {
 }
 .App div span {
   display: flex;
+  
   justify-content: center;
   border: 1px solid rgb(148, 139, 206);
   border-radius: 5px;
@@ -50,7 +56,7 @@ body {
 
 .App div span input {
     background-color: rgb(109, 63, 153);
-    height: 35px;
+    height: 55px;
     font-size: 16px;
     color: white;   
     border: none;
@@ -61,6 +67,7 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  
 }
 
 .App div span button:hover {
@@ -69,7 +76,7 @@ body {
 }
 
 #genreFilter {
-    font-size: 20px;
+    font-size: 36px;
 }
 
 .App ul {
@@ -95,12 +102,15 @@ body {
 .App ul li div h3 {
     padding-left: 20px;
     color: white;
+    font-size: 40px;
 }
 
 .App ul li div h5{
     margin-left: -10px;
     color: white;
     font-weight: normal;
+    font-size: 30px;
+
 }
 
 .App ul li {
@@ -122,6 +132,46 @@ body {
     }
     .App ul li img {
         width: 400px;
+    }
+
+    .App div span input {
+        height: 35px;
+        font-size: 20px;
+        color: white;   
+        border: none;
+    }
+
+    .App div span button {
+    
+    }
+    ::placeholder { 
+        color: white;
+        font-size: 20px;
+        opacity: 1; 
+    }
+
+    :-ms-input-placeholder {
+        color: white;
+        font-size: 20px;
+    }
+
+    ::-ms-input-placeholder { 
+        color: white;
+        font-size: 20px;
+    }
+
+    #genreFilter {
+        font-size: 20px;
+    }
+    #header {
+        display: flex;
+        flex-direction: row;
+    }
+    .App ul li div h3 {
+        font-size: 30px;
+    }
+    .App ul li div h5 {
+        font-size: 20px;
     }
 }
 

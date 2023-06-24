@@ -88,19 +88,20 @@ function App() {
     return (
         <>
             <div className="App">
-                <div>
+                <div id="header">
                     <span>
                         <input
                             type="text"
                             placeholder="Busque aqui um jogo pelo título"
                             onChange={handleChange}
-                            size="35"
+                            size="55"
+                            
                         />
                         <button onClick={execSearch}>
                             <BsSearch size={25} />
                         </button>
                     </span>
-                    <span>
+                    <span id="gPp">
                         <button
                             id="genreFilter"
                             onClick={() => setOpenGenrePopup(true)}
