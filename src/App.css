@@ -18,20 +18,20 @@ body {
     align-items: center;
 }
 
-::placeholder { 
-  color: white;
-  font-size: 36px;
-  opacity: 1; 
+::placeholder {
+    color: white;
+    font-size: 36px;
+    opacity: 1;
 }
 
-:-ms-input-placeholder { 
-  color: white;
-  font-size: 36px;
+:-ms-input-placeholder {
+    color: white;
+    font-size: 36px;
 }
 
-::-ms-input-placeholder { 
-  color: white;
-  font-size: 36px;
+::-ms-input-placeholder {
+    color: white;
+    font-size: 36px;
 }
 
 #header {
@@ -54,38 +54,34 @@ body {
     gap: 30px;
 }
 .App div span {
-  display: flex;
-  
-  justify-content: center;
-  border: 1px solid rgb(148, 139, 206);
-  border-radius: 5px;
+    display: flex;
 
+    justify-content: center;
+    border: 1px solid rgb(148, 139, 206);
+    border-radius: 5px;
 }
 
 .App div span input {
     background-color: rgb(109, 63, 153);
     height: 55px;
     font-size: 16px;
-    color: white;   
+    color: white;
     border: none;
 }
 
 .App div span button {
-  background-color: rgb(109, 63, 153);
-  border: none;
-  color: white;
-  cursor: pointer;
-  
+    background-color: rgb(109, 63, 153);
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 .App div span button:hover {
-  background-color: rgb(166, 122, 207);
-
+    background-color: rgb(166, 122, 207);
 }
 
 #genreFilter {
     font-size: 36px;
-    
 }
 
 .App ul {
@@ -114,14 +110,13 @@ body {
     font-size: 40px;
 }
 
-.App ul li div h5{
+.App ul li div h5 {
     margin: 45px;
     margin-left: -10px;
 
     color: white;
     font-weight: normal;
     font-size: 30px;
-
 }
 
 .App ul li {
@@ -154,17 +149,16 @@ body {
     .App div span input {
         height: 35px;
         font-size: 20px;
-        color: white;   
+        color: white;
         border: none;
     }
 
     .App div span button {
-    
     }
-    ::placeholder { 
+    ::placeholder {
         color: white;
         font-size: 20px;
-        opacity: 1; 
+        opacity: 1;
     }
 
     :-ms-input-placeholder {
@@ -172,7 +166,7 @@ body {
         font-size: 20px;
     }
 
-    ::-ms-input-placeholder { 
+    ::-ms-input-placeholder {
         color: white;
         font-size: 20px;
     }
@@ -185,10 +179,19 @@ body {
         display: flex;
         flex-direction: row;
     }
+    .App ul li div {
+        display: flex;
+        justify-content: start;
+        align-items: end;
+        margin: 10px;
+    }
+
     .App ul li div h3 {
         font-size: 30px;
+        margin: 0px;
     }
     .App ul li div h5 {
+        margin: 4px;
         font-size: 20px;
     }
 }
@@ -203,7 +206,6 @@ body {
     #header span button {
         padding: 5px;
     }
-
 }
 #loader {
     position: absolute;
@@ -214,5 +216,4 @@ body {
     margin: auto;
     width: fit-content;
     height: fit-content;
-
 }
