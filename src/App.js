@@ -131,7 +131,7 @@ function App() {
                                 size="55"
                             />
                             <button onClick={execSearch}>
-                                <BsSearch size={25} />
+                                <BsSearch size={30} />
                             </button>
                         </span>
                     )}

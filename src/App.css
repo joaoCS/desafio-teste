@@ -39,6 +39,14 @@ body {
     flex-direction: column;
 }
 
+#header span button {
+    padding: 5px;
+}
+
+#header span input {
+    height: 50px;
+}
+
 .App div {
     display: flex;
     justify-content: center;
@@ -77,6 +85,7 @@ body {
 
 #genreFilter {
     font-size: 36px;
+    
 }
 
 .App ul {
@@ -96,7 +105,7 @@ body {
 .App ul li div {
     display: flex;
     justify-content: end;
-
+    align-items: end;
 }
 
 .App ul li div h3 {
@@ -106,7 +115,9 @@ body {
 }
 
 .App ul li div h5{
+    margin: 45px;
     margin-left: -10px;
+
     color: white;
     font-weight: normal;
     font-size: 30px;
@@ -132,6 +143,12 @@ body {
     }
     .App ul li img {
         width: 400px;
+    }
+
+    .App ul li div {
+        display: flex;
+        justify-content: end;
+        align-items: end;
     }
 
     .App div span input {
@@ -162,6 +179,7 @@ body {
 
     #genreFilter {
         font-size: 20px;
+        height: 50px;
     }
     #header {
         display: flex;
@@ -182,6 +200,10 @@ body {
     .App ul li img {
         width: 350px;
     }
+    #header span button {
+        padding: 5px;
+    }
+
 }
 #loader {
     position: absolute;
