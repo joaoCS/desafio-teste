@@ -22,11 +22,26 @@ function App() {
         async function fetchGames() {
             try {
                 setShowLoader(true)
-                const response = await api.get("/data", {
-                    headers: {
-                        "dev-email-address": "joaoantoniogba025@gmail.com",
-                    },
-                })
+
+                const response = await Promise.race([
+                    api.get("/data", {
+                        headers: {
+                            "dev-email-address": "joaoantoniogba025@gmail.com",
+                        },
+                    }),
+                    new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error("timeout")), 5000)
+                    ),
+                ])
+
+                console.log(response)
+                
+
+                // const response = await api.get("/data", {
+                //     headers: {
+                //         "dev-email-address": "joaoantoniogba025@gmail.com",
+                //     },
+                // })
 
                 setGames(response.data)
                 setAuxGames(response.data)
@@ -35,7 +50,7 @@ function App() {
                 setGenres(genres)
                 setShowLoader(false)
             } catch (err) {
-                const status = err.response.status
+                const status = err?.response?.status
                 if (
                     status === 500 ||
                     status === 502 ||
@@ -52,7 +67,8 @@ function App() {
                     setAuxGames([])
                     setGames([])
                     setShowLoader(false)
-                } else if (status !== 200 || status !== 201) {
+                    return
+                } else if (status !== 200 && status !== 201 && status !== undefined) {
                     setErrorModalMessage(
                         "O servidor não conseguirá responder por agora, tente voltar novamente mais tarde"
                     )
@@ -60,8 +76,20 @@ function App() {
                     setAuxGames([])
                     setGames([])
                     setShowLoader(false)
+                    return 
                 }
-                console.log(err)
+                else if (err.message === "timeout") {
+                    setErrorModalMessage(
+                        "O servidor demorou para responder, tente mais tarde"
+                    )
+                    setOpenModal(true)
+                    setAuxGames([])
+                    setGames([])
+                    setShowLoader(false)
+                    return
+                }
+
+                console.log(typeof err.message)
             }
         }
 
