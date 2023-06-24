@@ -5,6 +5,7 @@ import ErrorModal from "./components/ErrorModal/ErrorModal"
 import { BsSearch } from "react-icons/bs"
 import GenrePopup from "./components/GenrePopup/GenrePopup"
 import { getDeduplicatedGenres } from "./utils/getDeduplicatedGenres"
+import { Bars } from  "react-loader-spinner"
 
 function App() {
     const [games, setGames] = useState([])
@@ -15,10 +16,12 @@ function App() {
     const [search, setSearch] = useState("")
     const [openGenrePopup, setOpenGenrePopup] = useState(false)
     const [genres, setGenres] = useState([])
+    const [showLoader, setShowLoader] = useState(false)
 
     useEffect(() => {
         async function fetchGames() {
             try {
+                setShowLoader(true)
                 const response = await api.get("/data", {
                     headers: {
                         "dev-email-address": "joaoantoniogba025@gmail.com",
@@ -30,6 +33,7 @@ function App() {
 
                 const genres = getDeduplicatedGenres(response.data)
                 setGenres(genres)
+                setShowLoader(false)
             } catch (err) {
                 const status = err.response.status
                 if (
@@ -47,6 +51,8 @@ function App() {
                     setOpenModal(true)
                     setAuxGames([]);
                     setGames([]);
+                    setShowLoader(false)
+
 
                 } else if (status !== 200 || status !== 201) {
                     setErrorModalMessage(
@@ -55,6 +61,7 @@ function App() {
                     setOpenModal(true)
                     setAuxGames([]);
                     setGames([])
+                    setShowLoader(false)
                 }
                 console.log(err)
             }
@@ -95,7 +102,6 @@ function App() {
                             placeholder="Busque aqui um jogo pelo título"
                             onChange={handleChange}
                             size="55"
-                            
                         />
                         <button onClick={execSearch}>
                             <BsSearch size={25} />
@@ -134,6 +140,16 @@ function App() {
                 </ul>
             </div>
             {openModal && <ErrorModal message={errorModalMessage} />}
+            {showLoader && (
+                <div id="loader">
+                    <Bars
+                        width={150}
+                        height={150}
+                        color="white"
+                        ariaLabel="Carregando..."
+                    />
+                </div>
+            )}
         </>
     )
 }
