@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: darkslateblue;
+    background-color: rgb(72, 61, 139);
 }
 
 .App {
@@ -22,16 +22,21 @@ body {
     color: white;
     font-size: 36px;
     opacity: 1;
+    margin-left: 5px;
 }
 
 :-ms-input-placeholder {
     color: white;
     font-size: 36px;
+    margin-left: 5px;
+
 }
 
 ::-ms-input-placeholder {
     color: white;
     font-size: 36px;
+    margin-left: 5px;
+
 }
 
 #header {
@@ -159,16 +164,21 @@ body {
         color: white;
         font-size: 20px;
         opacity: 1;
+        margin-left: 5px;
+
     }
 
     :-ms-input-placeholder {
         color: white;
         font-size: 20px;
+        margin-left: 5px;
     }
 
     ::-ms-input-placeholder {
         color: white;
         font-size: 20px;
+        margin-left: 5px;
+
     }
 
     #genreFilter {

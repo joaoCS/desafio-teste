@@ -35,8 +35,6 @@ function App() {
                 ])
 
                 console.log(response)
-                
-
                 // const response = await api.get("/data", {
                 //     headers: {
                 //         "dev-email-address": "joaoantoniogba025@gmail.com",
@@ -118,6 +116,11 @@ function App() {
         else setAuxGames(filteredGames)
     }
 
+    function handleKeyDown(event) {
+        if (event.key === "Enter") {
+            execSearch()
+        }
+    }
     return (
         <>
             <div className="App">
@@ -129,6 +132,7 @@ function App() {
                                 placeholder="Busque aqui um jogo pelo título"
                                 onChange={handleChange}
                                 size="55"
+                                onKeyDown={handleKeyDown}
                             />
                             <button onClick={execSearch}>
                                 <BsSearch size={30} />
