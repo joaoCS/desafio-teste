@@ -1,11 +1,11 @@
-   #Projeto do desafio da App Masters
+# Projeto do desafio da App Masters
 
-Digite **git clone** <url do repositório> para baixar para sua máquina local
+Digite `git clone` <url do repositório> para baixar para sua máquina local
 
-Digite **cd desafio-teste**
-Depois **npm install** para instalar as dependências
+Digite `cd desafio-teste`
+Depois `npm install` para instalar as dependências
 
-Depois é só digitar **npm start** para rodar na sua máquina 
+Depois é só digitar `npm start` para rodar na sua máquina 
 
 -É necessário ter o node instalado
 
