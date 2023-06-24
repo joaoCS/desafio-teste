@@ -9,10 +9,11 @@ Depois é só digitar `npm start` para rodar na sua máquina
 
 -É necessário ter o node instalado
 
+[Link para o deploy](https://desafio-teste.onrender.com/)
+
 <img src="https://github.com/joaoCS/desafio-teste/blob/main/src/img/print1.jpg" width="450">
 
 <img src="https://github.com/joaoCS/desafio-teste/blob/main/src/img/print2.jpg" width="450">
 
 <img src="https://github.com/joaoCS/desafio-teste/blob/main/src/img/print3.jpg" width="450">
 
-[Link para o deploy](https://desafio-teste.onrender.com/)
