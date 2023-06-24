@@ -5,7 +5,7 @@ import ErrorModal from "./components/ErrorModal/ErrorModal"
 import { BsSearch } from "react-icons/bs"
 import GenrePopup from "./components/GenrePopup/GenrePopup"
 import { getDeduplicatedGenres } from "./utils/getDeduplicatedGenres"
-import { Bars } from  "react-loader-spinner"
+import { Bars } from "react-loader-spinner"
 
 function App() {
     const [games, setGames] = useState([])
@@ -49,17 +49,15 @@ function App() {
                         "O servidor falhou em responder, tente recarregar a página"
                     )
                     setOpenModal(true)
-                    setAuxGames([]);
-                    setGames([]);
+                    setAuxGames([])
+                    setGames([])
                     setShowLoader(false)
-
-
                 } else if (status !== 200 || status !== 201) {
                     setErrorModalMessage(
                         "O servidor não conseguirá responder por agora, tente voltar novamente mais tarde"
                     )
                     setOpenModal(true)
-                    setAuxGames([]);
+                    setAuxGames([])
                     setGames([])
                     setShowLoader(false)
                 }
@@ -96,24 +94,28 @@ function App() {
         <>
             <div className="App">
                 <div id="header">
-                    <span>
-                        <input
-                            type="text"
-                            placeholder="Busque aqui um jogo pelo título"
-                            onChange={handleChange}
-                            size="55"
-                        />
-                        <button onClick={execSearch}>
-                            <BsSearch size={25} />
-                        </button>
-                    </span>
+                    {!showLoader && (
+                        <span>
+                            <input
+                                type="text"
+                                placeholder="Busque aqui um jogo pelo título"
+                                onChange={handleChange}
+                                size="55"
+                            />
+                            <button onClick={execSearch}>
+                                <BsSearch size={25} />
+                            </button>
+                        </span>
+                    )}
                     <span id="gPp">
-                        <button
-                            id="genreFilter"
-                            onClick={() => setOpenGenrePopup(true)}
-                        >
-                            Filtrar por gênero
-                        </button>
+                        {!showLoader && (
+                            <button
+                                id="genreFilter"
+                                onClick={() => setOpenGenrePopup(true)}
+                            >
+                                Filtrar por gênero
+                            </button>
+                        )}
                         {openGenrePopup && (
                             <GenrePopup
                                 genreList={genres}
